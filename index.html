@@ -7,15 +7,14 @@
   <body>
     <div class="container">
       <h1>Calculadora de Promedio de Notas</h1>
-      <div >
-        <img src="IJFK.jpg" id="mi-imagen" width="150" height="150" />
-      </div>
-
+      <div class="imagen-centrada">
+        <img src="IJFK.jpg" width="150" height="150" />
+      </div><br /><br />
       <form id="promedioForm">
         <label for="nota1"> Contabilidad:</label>
         <input type="number" id="nota1" name="nota1" required /><br />
 
-        <label for="nota2">Matematicas Financieras:</label>
+        <label for="nota2">Matematicas Financiera:</label>
         <input type="number" id="nota2" name="nota2" required /><br /><br />
 
         <label for="nota3">Filosofia:</label>
@@ -24,22 +23,22 @@
         <label for="nota4">Ingles:</label>
         <input type="number" id="nota4" name="nota4" required /><br /><br />
 
-        <label for="nota5">Administracion General:</label>
+        <label for="nota5">Español:</label>
         <input type="number" id="nota5" name="nota5" required /><br /><br />
 
-        <label for="nota6">Gestion Empresarial:</label>
+        <label for="nota6">Administracion General:</label>
         <input type="number" id="nota6" name="nota6" required /><br /><br />
 
-        <label for="nota7">Español:</label>
+        <label for="nota7">Gestion Empresarial:</label>
         <input type="number" id="nota7" name="nota7" required /><br /><br />
 
-        <label for="nota8">Apreciacion Artistica:</label>
+        <label for="nota8">Economia:</label>
         <input type="number" id="nota8" name="nota8" required /><br /><br />
-
+        
         <label for="nota9">Legislacion Mercantil:</label>
         <input type="number" id="nota9" name="nota9" required /><br /><br />
 
-        <label for="nota10">Economia:</label>
+        <label for="nota10">Apreciacion Artistica:</label>
         <input type="number" id="nota10" name="nota10" required /><br /><br />
 
         <button type="button" onclick="calcularPromedio()">
@@ -47,7 +46,8 @@
         </button>
         <button type="button" onclick="limpiarCampos()">Limpiar Campos</button>
       </form>
-      
+      <div id="resultado"></div>
+    </div>
     <script>
       function calcularPromedio() {
         const nota1 = parseFloat(document.getElementById("nota1").value);
@@ -61,7 +61,7 @@
         const nota9 = parseFloat(document.getElementById("nota9").value);
         const nota10 = parseFloat(document.getElementById("nota10").value);
 
-        // Validar si las notas son números válidos 
+        // Validar si las notas son números válidos
         if (
           isNaN(nota1) ||
           isNaN(nota2) ||
@@ -80,21 +80,10 @@
         }
 
         // Calcular el promedio
-        const promedio =
-          (nota1 +
-            nota2 +
-            nota3 +
-            nota4 +
-            nota5 +
-            nota6 +
-            nota7 +
-            nota8 +
-            nota9 +
-            nota10) /
-          10;
+        const promedio = (nota1 + nota2 + nota3 + nota4 + nota5 + nota6 + nota7 + nota8 + nota9 +  nota10) / 10;
 
         document.getElementById("resultado").textContent =
-          "El promedio es:" + promedio.toFixed(2); // Mostrar el promedio con 2 decimales
+          "Su Promedio es: " + promedio.toFixed(2); // Mostrar el promedio con 2 decimales
       }
       function limpiarCampos() {
         document.getElementById("nota1").value = "";
